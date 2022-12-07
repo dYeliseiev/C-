@@ -1,0 +1,83 @@
+Номер 2,6
+#include <iostream>
+
+using namespace std;
+int main() {
+  long c0;//саме велике значення на всяк випадок
+  int counter;
+  while (true){
+    cin >> c0;
+    while (c0!=1){ //поки с не дорівнює 1 робити 
+      if (c0%2==0){// якщо число при діленні на два = 0
+        c0=c0/2;//обчислити як парне
+      }else if (c0%2!=0){//якщо ніт
+        c0=3*c0+1;// обчислити як не парне
+      }
+      cout << c0 << endl;// вивід числа при обчисленні
+      counter++;// при кожному виводі числа збільшувати значення на 1
+    }
+    cout << "Steps = ";// вивести кроки до 1
+    cout << counter << endl;
+    counter = 0;
+  }
+}
+
+
+Номер 2,7
+#include <iostream>
+
+using namespace std;
+int main(void) {
+  double pi4 = 0.;
+  long n;
+  long j = 1;
+  
+  cout << "Number of iterations? ";
+  cin >> n;
+  
+  for(int i=0; i<n; i=i+2){
+    pi4 = pi4 + ((1./j)-(1./(j+2)));// число пі плюс самі дроби
+    j=j+4;
+  }
+  
+  cout.precision(20);
+  cout << "Pi = " << (pi4 * 4.) << endl;
+  return 0;
+}
+
+
+Номер 2,10
+#include <iostream>
+
+using namespace std;
+
+int main(void) {
+	int size;
+cin >> size;
+
+	if (size > 0 && size < 100) {// якщо розмір більше 0 там меньше від 100
+		cout << '+';
+		for (int i = 0; i < size; i++)// для розмір більше ніж 0
+			cout << '-';
+		cout << '+' << endl;
+		for (int i = 0; i < size; i++) {// стовпець
+			cout << '|';
+			for (int j = 0; j < size; j++)// рядок
+				cout << ' ';
+			cout << '|' << endl;
+		}
+		cout << '+';
+		for (int i = 0; i < size; i++)
+			cout << '-';
+		cout << '+' << endl;
+	}
+	else// якщо буде 101 то цей варіант
+	{
+		cout << "Sorry, the side size is too big";
+	}
+
+	return 0;
+}
+
+
+
