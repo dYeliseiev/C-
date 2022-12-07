@@ -1,0 +1,273 @@
+Номер 1
+Задати двомірний масив 𝑚 ∗ 𝑛 цілих чисел 𝑚 = 4, 𝑛 = 3. Визначити кількість парних чисел у кожному рядку. 
+
+#include <iostream>
+#include <ctime> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	int m[4][3];
+	int evenNum = 0;//змінна для парних чисел рядка
+	int min = 1;
+	int max = 10;
+	srand(time(NULL));//рандом аргументу з функцією
+	
+	    for (int i = 0; i < 4; ++i) { // для рядків 
+		    for (int j = 0; j < 3; ++j) {// для стовпчиків
+			    m[i][j] = min + rand() % (max - min + 1);
+		}
+	}
+	for (int i = 0; i < 4; ++i) {
+		evenNum = 0;
+		for (int j = 0; j < 3; ++j) {
+			if (m[i][j] % 2 == 0)// к-сть парних
+				evenNum++;
+		}
+		cout << "for " << i << " evenNum = " << evenNum << endl;
+	}
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 3; ++j) {
+			cout << m[i][j] << ' ';
+		}
+		cout << endl;
+	}
+}
+
+
+
+Номер 2
+Задати двомірний масив 𝑚 ∗ 𝑛 цілих чисел 𝑚 = 6, 𝑛 = 4. Визначити кількість парних чисел у кожному стовпчику.
+#include <iostream>
+#include <ctime> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	int m[6][4];
+	int evenNum = 0;// парні числа 
+	int min = 1;
+	int max = 10;
+	srand(time(NULL));//рандом аргументу з функцією
+	for (int i = 0; i < 6; ++i) {// для рядків 
+		for (int j = 0; j < 4; ++j) {// для стовпчиків
+			m[i][j] = min + rand() % (max - min + 1);
+		}
+	}
+	for (int j = 0; j < 4; ++j) {
+		evenNum = 0;
+		for (int i = 0; i < 6; ++i) {
+			if (m[i][j] % 2 == 0)// к-сть парних
+				evenNum++;
+		}
+		cout << "for " << j << " evenNum = " << evenNum << endl;
+	}
+	for (int i = 0; i < 6; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			cout << m[i][j] << ' ';
+		}
+		cout << endl;
+	}
+}
+
+
+
+Номер 3
+Задати двомірний масив 𝑚 ∗ 𝑛 цілих чисел 𝑚 = 5, 𝑛 = 7. Обчислити суму елементів кожного рядка.
+
+#include <iostream>
+#include <ctime> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	int m[5][7];
+	int sumOfElements = 0;
+	int min = 1;
+	int max = 10;
+	srand(time(NULL));
+	for (int i = 0; i < 5; ++i) {
+		for (int j = 0; j < 7; ++j) {
+			m[i][j] = min + rand() % (max - min + 1);
+	}
+	}
+	for (int i = 0; i < 5; ++i) {
+		sumOfElements = 0;
+		for (int j = 0; j < 7; ++j) {
+			sumOfElements = m[i][j] + sumOfElements;
+		}
+		cout << "for " << i << " sumOfElements = " << sumOfElements << endl;
+	}
+	for (int i = 0; i < 5; ++i) {
+		for (int j = 0; j < 7; ++j) {
+			cout << m[i][j] << ' ';
+		}
+		cout << endl;
+	}
+}
+
+
+
+Номер 4
+Задати двомірний масив 𝑚 ∗ 𝑛 цілих чисел 𝑚 = 4, 𝑛 = 6. Обчислити суму елементів кожного стовпчика. 
+
+#include <iostream>
+#include <ctime> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	int m[4][6];
+	int sumOfElements = 0;
+	int min = 1;
+	int max = 10;
+	srand(time(NULL));
+	
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 6; ++j) {
+			m[i][j] = min + rand() % (max - min + 1);
+		}
+	}
+	for (int j = 0; j < 6; ++j) {
+		sumOfElements = 0;
+		for (int i = 0; i < 4; ++i) {
+			sumOfElements = m[i][j] + sumOfElements;
+		}
+		cout << "for " << j << " sumOfElements = " << sumOfElements << endl;
+	}
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 6; ++j) {
+			cout << m[i][j] << ' ';
+		}
+		cout << endl;
+	}
+}
+
+
+
+Номер 5
+Задати двомірний масив 𝑚 ∗ 𝑛 цілих чисел 𝑚 = 3, 𝑛 = 4. Знайти максимальний елемент у масиві. Вивести на екран його значення та номер.
+
+#include <iostream>
+#include <ctime> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	int m[3][4];
+	int line;//i
+	int column;//j
+	int elementMax = 0;
+	int min = 1;
+	int max = 10;
+	srand(time(NULL));
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			m[i][j] = min + rand() % (max - min + 1);
+		}
+	}
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			if (m[i][j] > elementMax) {
+				elementMax = m[i][j];
+				line = i;
+				column = j;
+			}
+		}
+	}
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			cout << m[i][j] << ' ';
+		}
+		cout << endl;
+	}
+	cout << elementMax << "[" << line << ";" << column << "]" << endl;
+}
+
+
+
+Номер 6
+Задати двомірний масив 𝑚 ∗ 𝑛 цілих чисел 𝑚 = 4, 𝑛 = 7. Знайти мінімальний елемент у масиві. Вивести на екран його значення та номер у масиві.
+
+#include <iostream>
+#include <ctime> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	int m[3][4];
+	int line;//i
+	int column;//j
+	int elementMin = 11;
+	int min = 1;
+	int max = 10;
+	srand(time(NULL));
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			m[i][j] = min + rand() % (max - min + 1);
+		}
+	}
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			if (m[i][j] < elementMin) {
+				elementMin = m[i][j];
+		line = i;
+				column = j;
+			}
+		}
+	}
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			cout << m[i][j] << ' ';
+		}
+		cout << endl;
+	}
+	cout << elementMin << "[" << line << ";" << column << "]" << endl;
+}
+
+
+
+Номер 15
+Задати двомірний масив 𝑚 ∗ 𝑛 цілих чисел 𝑚 = 3, 𝑛 = 3. Обчислити суму чисел по діагоналям.
+
+#include <iostream>
+#include <ctime> 
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	int m[3][3];//масив розміром 3×3
+	int sumDiagonal1 = 0;// змінна для суми 1 діагоналі
+	int sumDiagonal2 = 0;// так само для 2
+	int min = 1;
+	int max = 10;
+	srand(time(NULL));// функції з аргументом
+	for (int i = 0; i < 3; ++i) {// цикл для рядків
+		for (int j = 0; j < 3; ++j) {// цикл для стовпців
+			m[i][j] = min + rand() % (max - min + 1);// допустимий діапазон
+		}
+	}
+	for (int i = 0; i < 3; ++i) {
+		sumDiagonal1 = m[i][i] + sumDiagonal1;
+	}
+	for (int i = 0,j=2; i < 3; ++i,--j) {
+			sumDiagonal2 = m[i][j] + sumDiagonal2;
+	}
+	
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 3; ++j) {
+			cout << m[i][j] << ' ';
+		}
+		cout << endl;
+	}
+	cout << sumDiagonal1 << " - first diagonal " << endl << sumDiagonal2 << " - second diagonal";
+}
+
+
