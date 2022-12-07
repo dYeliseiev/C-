@@ -1,0 +1,149 @@
+Номер 3
+.Напишіть програму, що змінює місцями найбільший і найменший елементи заданого не порожнього масиву різних чисел і потім друкує отриманий масив. 
+
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int main() {
+		int change;
+		int m[7];
+		int min=1;
+		int max=70;
+		srand(time(NULL));
+		for (int i = 0; i < 7; i++) {
+			m[i] = min + rand() % (max - min + 1);
+		}
+	
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 6; j++) {
+				if (m[j] > m[j + 1]) {
+					change = m[j];
+					m[j] = m[j + 1];
+					m[j + 1] = change;
+				}
+			}
+		}
+		change = m[0];
+		m[0] = m[6];
+		m[6] = change;
+
+		for (int i = 0; i < 7; i++) {
+			cout << m[i] << ' ';
+		}
+
+	}
+
+
+Номер 4
+Напишіть програму, що вводить із клавіатури число A і друкує кількість елементів заданого масиву, більших за A.
+
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int Number() {
+	int x;
+	cout << " Enter any number: ";
+	cin >> x;
+	return x;
+}
+
+int main() {
+	int A = Number();
+	int numberOf=0;
+	int m[7];
+	int min = 1;
+	int max = 33;
+	srand(time(NULL));
+for (int i = 0; i <7; i++) {
+		m[i]= min + rand() % (max - min + 1);
+	}
+	for (int i = 0; i < 7; i++) {
+		if (A < m[i])
+			numberOf++;
+	}
+	cout << "Number elements greater than A -  " << numberOf << endl;
+	system("pause");
+}
+
+
+
+Номер 5
+Напишіть програму, що друкує другий по величині елемент заданого не порожнього масиву різних чисел.
+
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+
+using namespace std;
+
+
+
+int main() {
+	int number;
+	int m[7];
+	int min = 1;
+	int max = 30;
+	srand(time(NULL));
+	for (int i = 0; i < 7; i++) {
+		m[i] = min + rand() % (max - min + 1);
+	}
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 6; j++) {
+			if (m[j] > m[j + 1]) {
+				number = m[j];
+				m[j] = m[j + 1];
+				m[j + 1] = number;
+			}
+		}
+	}
+	for (int i = 0; i < 7; i++) {
+		cout << m[i] << ' ';
+	}
+	cout << endl << "The second largest element is - " << m[5] << endl;
+	system("pause");
+}
+
+
+
+Номер 6
+Напишіть програму, що друкує номер першого нульового елемента заданого масиву чи повідомлення про те, що масив не містить нульових елементів.
+
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+
+using namespace std;
+
+
+int main() {
+int element=-1;
+	int m[7];
+	int min = 0;
+	int max = 20;
+	srand(time(NULL));
+	for (int i = 0; i < 7; i++) {
+		m[i] = min + rand() % (max - min + 1);
+	}
+	for (int i = 0; i < 6; i++) {
+		if (m[i] == 0)
+			element = i;
+
+	}
+	for (int i = 0; i < 7; i++) {
+		cout << m[i] << ' ';
+	}
+	if (element == -1)
+		cout << "No zero" << endl;
+	else
+		cout << "Number of element with zero - " << element << endl;
+	system("pause");
+}
+
+
+
